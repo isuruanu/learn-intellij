@@ -1,0 +1,44 @@
+<idea-plugin version="2">
+  <id>com.genymotion.idea</id>
+  <name>Genymotion</name>
+  <version>1.0.3</version>
+  <vendor email="support@genymotion.com" url="http://www.genymotion.com">Genymotion</vendor>
+
+  <description><![CDATA[
+      This plugin allows you to create and start new genymotion virtual devices from within Android Studio / Intellij IDEA.<br>
+      <small>Genymotion is a product enabling you to run custom versions of Android, built for execution inside VirtualBox, in order to allow the best GPU and CPU performance on your desktop.</small>
+      ]]></description>
+
+  <change-notes><![CDATA[
+      See: https://cloud.genymotion.com/page/changelog-plugins
+      ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="107.105"/>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <depends>com.intellij.modules.java</depends>
+
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+      <action id="Genymotion.gdm" class="com.genymobile.genymotion.ide.idea.GdmAction" text="Genymotion Device Manager" description="genymotion device manager description"  icon="/icons/gdm_manager.png" >
+          <add-to-group group-id="MainToolBar" anchor="last"/>
+      </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+          <!-- Add your extensions here -->
+          <applicationConfigurable implementation="com.genymobile.genymotion.ide.idea.GdmSettings"/>
+  </extensions>
+
+</idea-plugin>
